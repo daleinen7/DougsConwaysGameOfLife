@@ -3,7 +3,7 @@
     --box-color: #fff;
     --bg: #000;
 
-    --box-size: 20px;
+    --box-size: 40px;
 }
 
 body {
@@ -14,8 +14,12 @@ body {
 
 .box {
     background-color: var(--box-color);
+    margin-top: 1px;
+    margin-left: 1px;
 }
 
 main {
     background-color: var(--grid-color);
+    display: flex;
+    flex-wrap: wrap;
 }

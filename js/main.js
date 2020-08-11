@@ -10,20 +10,27 @@ const BOXSIZE = 'var(--box-size)';
 let grid = [];
 
 /*----- cached element references -----*/
-/*----- event listeners -----*/
 const btn = document.querySelector('button');
 const board = document.querySelector('main')
+
+/*----- event listeners -----*/
 
 /*----- functions -----*/
 // init
 function init() {
     // make main board
-    board.style.width = GRIDWIDTH * BOXSIZE + (GRIDWIDTH + 1)
-    board.style.height = GRIDHEIGHT * BOXSIZE + (GRIDHEIGHT + 1)
+    board.style.width = GRIDWIDTH * BOXSIZE + (GRIDWIDTH + 1);
+    board.style.height = GRIDHEIGHT * BOXSIZE + (GRIDHEIGHT + 1);
 
     // create grid
     for (let i = 0; i < GRIDWIDTH * GRIDHEIGHT; i++) {
-
+        let box = document.createElement('div');
+        box.classList.add('box');
+        box.setAttribute('id', 'box' + i);
+        box.style.width = BOXSIZE;
+        box.style.height = BOXSIZE;
+        box.textContent = i;
+        board.append(box);
     }
     // set grid to 0
 
