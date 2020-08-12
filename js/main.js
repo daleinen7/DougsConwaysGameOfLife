@@ -1,11 +1,10 @@
 /*----- constants -----*/
+const GRIDWIDTH = 14;
 const GRIDHEIGHT = 10;
-const GRIDWIDTH = 10;
 const GRIDCOLOR = 'var(--grid-color)';
 const BOXCOLOR = 'var(--box-color)';
 const MAINCOLOR = 'var(--bg)';
-// const BOXSIZE = 'var(--box-size)';
-const BOXSIZE = 40;
+const BOXSIZE = 30;
 /*----- app's state (variables) -----*/
 let grid = [];
 /*----- cached element references -----*/
@@ -33,8 +32,8 @@ function init() {
     //create elementReference
     boxEls = document.querySelectorAll('.box');
     // make main board
-    board.width = GRIDWIDTH * BOXSIZE + (GRIDWIDTH + 1);
-    board.height = GRIDHEIGHT * BOXSIZE + (GRIDHEIGHT + 1);
+    board.style.width = parseInt(GRIDWIDTH * BOXSIZE + (GRIDWIDTH + 1)) + "px";
+    board.style.height = parseInt(GRIDHEIGHT * BOXSIZE + (GRIDHEIGHT + 1)) + "px";
     render();
 }
 // go to next generation
